@@ -39,6 +39,12 @@ module.exports = function(ngModule) {
       controllerAs: 'vm',
       templateUrl: '/views/employees/new.html',
     });
+    
+    $routeProvider.when('/employees/:employeeId', {
+      controller: 'EmployeesShowCtrl',
+      controllerAs: 'vm',
+      templateUrl: '/views/employees/show.html',
+    });
 
     $routeProvider.otherwise({ redirectTo: '/vacancies' });
   });

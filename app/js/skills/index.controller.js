@@ -1,11 +1,11 @@
 module.exports = function(ngModule) {
   'use strict';
 
-  function ctrl($http) {
+  function ctrl($http, SkillResource) {
     /*jshint validthis:true */
     var vm = this;
-
-    $http.get('/api/v1/skills.json').success(function(resp) {
+    
+    SkillResource.query({}, function(resp) {
       vm.skills = resp.skills;
       vm.skillsCount = resp.total_count;
     });

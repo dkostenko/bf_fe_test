@@ -27,7 +27,8 @@
         tbody
           tr(ng-repeat='employee in vm.employees')
             td {{ employee.id }}
-            td {{ employee.name }}
+            td
+              a(ng-href='/employees/{{ employee.id }}') {{ employee.name }}
             td {{ employee.email }}
             td {{ employee.phone }}
             td {{ employee.status }}

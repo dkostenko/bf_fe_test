@@ -1,11 +1,11 @@
 module.exports = function(ngModule) {
   'use strict';
 
-  function ctrl($http) {
+  function ctrl($http, VacancyResource) {
     /*jshint validthis:true */
     var vm = this;
-
-    $http.get('/api/v1/vacancies.json').success(function(resp) {
+    
+    VacancyResource.query({}, function(resp) {
       vm.vacancies = resp.vacancies;
       vm.vacanciesCount = resp.total_count;
     });

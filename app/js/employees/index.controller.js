@@ -1,11 +1,11 @@
 module.exports = function(ngModule) {
   'use strict';
 
-  function ctrl($http) {
+  function ctrl($http, EmployeeResource) {
     /*jshint validthis:true */
     var vm = this;
-
-    $http.get('/api/v1/employees.json').success(function(resp) {
+    
+    EmployeeResource.query({}, function(resp) {
       vm.employees = resp.employees;
       vm.employeesCount = resp.total_count;
     });

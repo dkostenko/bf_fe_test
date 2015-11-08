@@ -14,6 +14,7 @@ require('./js/vacancies/resource.js')(ngModule);
 
 require('./js/employees/index.controller.js')(ngModule);
 require('./js/employees/new.controller.js')(ngModule);
+require('./js/employees/show.controller.js')(ngModule);
 require('./js/employees/resource.js')(ngModule);
 
 require('./app.run.js')(ngModule);
