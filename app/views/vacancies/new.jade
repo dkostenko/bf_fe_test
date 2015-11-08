@@ -1,0 +1,47 @@
+.container
+  .row
+    .col-xs-6.col-xs-offset-3
+      .page-header
+        h4 New vacancy
+
+
+      form(ng-submit='vm.createVacancy()')
+        .form-group
+          label(for='title') Title
+          input#title.form-control(
+            type='text', 
+            placeholder='title',
+            ng-model='vm.vacancy.title',
+            ng-required='true'
+          )
+
+        .form-group
+          label(for='contacts') contacts
+          input#contacts.form-control(
+            type='text', 
+            placeholder='contacts',
+            ng-model='vm.vacancy.contacts',
+            ng-required='true'
+          )
+
+        .form-group
+          label(for='salary') salary
+          input#salary.form-control(
+            type='number', 
+            placeholder='salary', 
+            min='0', 
+            max='2147483647',
+            ng-model='vm.vacancy.salary',
+            ng-required='true'
+          )
+
+        .form-group
+          label(for='expired_at') expired_at
+          input#expired_at.form-control(
+            type='date', 
+            placeholder='expired_at',
+            ng-model='vm.vacancy.expired_at',
+            ng-required='true'
+          )
+
+        button.btn.btn-default(type='submit') Submit

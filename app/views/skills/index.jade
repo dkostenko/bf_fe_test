@@ -1,0 +1,26 @@
+.container
+  .row
+    .col-xs-12
+      .page-header
+        .row
+          .col-xs-6
+            h4
+              | Skills
+              | 
+              small ({{ vm.skillsCount }})
+          
+          .col-xs-6.text-right
+            small
+              a.btn.btn-link(href='/skills/new') Add
+
+
+      table.table.table-hover(ng-if='vm.skillsCount > 0')
+        thead
+          tr
+            th ID
+            th Name
+
+        tbody
+          tr(ng-repeat='skill in vm.skills')
+            td {{ skill.id }}
+            td {{ skill.name }}

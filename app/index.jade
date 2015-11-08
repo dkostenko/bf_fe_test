@@ -1,0 +1,26 @@
+doctype
+html(ng-app='app')
+  head
+    title(ng-bind='title') BF
+    meta(charset='utf-8')
+    base(href='/')
+    //- inject:css
+    //- endinject
+
+  body
+    nav.navbar.navbar-default
+      .container
+        .navbar-header
+          a.navbar-brand(href='/skills') BF
+
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+          ul.nav.navbar-nav
+            li
+              a(href='/skills') Skills
+            li
+              a(href='/vacancies') Vacancies
+            li
+              a(href='/employees') Employees
+    ng-view
+    //- inject:js
+    //- endinject

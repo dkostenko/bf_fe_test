@@ -1,0 +1,18 @@
+.container
+  .row
+    .col-xs-6.col-xs-offset-3
+      .page-header
+        h4 New skill
+
+
+      form(ng-submit='vm.createSkill()')
+        .form-group
+          label(for='name') Title
+          input#name.form-control(
+            type='text', 
+            placeholder='name',
+            ng-model='vm.skill.name',
+            ng-required='true'
+          )
+
+        button.btn.btn-default(type='submit') Submit

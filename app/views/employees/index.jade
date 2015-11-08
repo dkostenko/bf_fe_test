@@ -1,0 +1,17 @@
+.container
+  .row
+    .col-xs-12
+      .page-header
+        h4 Employees
+
+
+      table.table.table-hover
+        thead
+          tr
+            th ID
+            th Name
+            
+        tbody
+          tr(ng-repeat='employee in vm.employees')
+            td {{ employee.id }}
+            td {{ employee.name }}
