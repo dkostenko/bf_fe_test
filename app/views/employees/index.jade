@@ -2,16 +2,33 @@
   .row
     .col-xs-12
       .page-header
-        h4 Employees
+        .row
+          .col-xs-6
+            h4
+              | Employees
+              | 
+              small ({{ vm.employeesCount }})
+          
+          .col-xs-6.text-right
+            small
+              a.btn.btn-link(href='/employees/new') Add
 
 
-      table.table.table-hover
+      table.table.table-hover(ng-if='vm.employeesCount > 0')
         thead
           tr
             th ID
             th Name
+            th email 
+            th phone
+            th status
+            th salary 
             
         tbody
           tr(ng-repeat='employee in vm.employees')
             td {{ employee.id }}
             td {{ employee.name }}
+            td {{ employee.email }}
+            td {{ employee.phone }}
+            td {{ employee.status }}
+            td {{ employee.salary }}

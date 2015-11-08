@@ -7,6 +7,7 @@ module.exports = function(ngModule) {
 
     $http.get('/api/v1/employees.json').success(function(resp) {
       vm.employees = resp.employees;
+      vm.employeesCount = resp.total_count;
     });
   }
 
