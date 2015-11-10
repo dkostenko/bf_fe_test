@@ -24,12 +24,12 @@ module.exports = function(ngModule) {
         vm.skillsCount = resp.total_count;
       
         VacancySkillResource.query({ vacancyId: vm.vacancy.id }, function(resp) {
-          vm.VacanciesSkills = resp.skills;
-          vm.VacanciesSkillsCount = resp.total_count;
+          vm.vacanciesSkills = resp.skills;
+          vm.vacanciesSkillsCount = resp.total_count;
           
           angular.forEach(vm.skills, function(skill, idx) {
-            angular.forEach(vm.VacanciesSkills, function(VacanciesSkill, idx) {
-              if (skill.id != VacanciesSkill.id) {
+            angular.forEach(vm.vacanciesSkills, function(vacancySkill, idx) {
+              if (skill.id != vacancySkill.id) {
                 return;
               }
 

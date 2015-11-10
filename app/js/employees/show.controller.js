@@ -1,7 +1,7 @@
 module.exports = function(ngModule) {
   'use strict';
 
-  function ctrl($http, $routeParams, EmployeeResource, EmployeeVacancyResource) {
+  function ctrl($http, $routeParams, EmployeeResource, EmployeeVacancyResource, EmployeeSkillResource) {
     /*jshint validthis:true */
     var vm = this;
 
@@ -11,6 +11,11 @@ module.exports = function(ngModule) {
         EmployeeVacancyResource.query({ employeeId: vm.employee.id }, function(resp) {
           vm.vacancies = resp.vacancies;
           vm.vacanciesCount = resp.total_count;
+        });
+        
+        EmployeeSkillResource.query({ employeeId: vm.employee.id }, function(resp) {
+          vm.skills = resp.skills;
+          vm.skillsCount = resp.total_count;
         });
       },
       function(resp) {

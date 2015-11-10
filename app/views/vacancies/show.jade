@@ -1,6 +1,6 @@
 .container
   .row
-    .col-xs-6
+    .col-md-4
       .page-header
         h4 vacancy # {{ vm.vacancy.id }}
         
@@ -24,7 +24,15 @@
         dd {{ vm.vacancy.created_at | date:'medium' }}
 
 
-    .col-xs-6
+    .col-md-4
+      .page-header
+        h4 Умения
+      
+      ul
+        li(ng-repeat='skill in vm.skills') {{ skill.name }}
+
+
+    .col-md-4
       .page-header
         h4 Частично подходящие кандидаты
         

@@ -1,6 +1,6 @@
 .container
   .row
-    .col-xs-6
+    .col-md-4
       .page-header
         h4 Employee # {{ vm.employee.id }}
         
@@ -24,7 +24,15 @@
         dd {{ vm.employee.salary }}
 
 
-    .col-xs-6
+    .col-md-4
+      .page-header
+        h4 Умения
+      
+      ul
+        li(ng-repeat='skill in vm.skills') {{ skill.name }}
+
+
+    .col-md-4
       .page-header
         h4 Частично подходящие вакансии
 
