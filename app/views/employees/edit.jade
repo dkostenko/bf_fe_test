@@ -1,0 +1,69 @@
+.container
+  .row
+    .col-xs-6
+      .page-header
+        h4 Edit employee # {{ vm.employee.id }}
+        
+      form(ng-submit='vm.updateEmployeeHandler()')
+        .form-group
+          label(for='name') Name
+          input#name.form-control(
+            type='text', 
+            placeholder='name',
+            ng-model='vm.employee.name',
+            ng-required='true'
+          )
+
+        .form-group
+          label(for='email') email
+          input#email.form-control(
+            type='email', 
+            placeholder='email',
+            ng-model='vm.employee.email'
+          )
+
+        .form-group
+          label(for='phone') phone
+          input#phone.form-control(
+            type='text', 
+            placeholder='phone', 
+            ng-model='vm.employee.phone'
+          )
+
+        .form-group
+          label(for='salary') salary
+          input#salary.form-control(
+            type='number', 
+            placeholder='salary', 
+            min='0', 
+            max='2147483647',
+            ng-model='vm.employee.salary',
+            ng-required='true'
+          )
+
+        .checkbox
+          label
+            input(
+              type='checkbox',
+              ng-model='vm.employee.status'
+            )
+            | 
+            | Ищу работу
+
+        button.btn.btn-default(type='submit') Submit
+
+
+    .col-xs-6
+      .page-header
+        h4 Умения
+
+      .checkbox(ng-repeat='skill in vm.skills')
+        label
+          input(
+            type='checkbox',
+            ng-model='skill.selected',
+            ng-change='vm.skillSeletionChangeHandler(skill)'
+          )
+          | 
+          | {{ skill.name }}
+

@@ -20,6 +20,14 @@ module.exports = function(ngModule) {
 
           return angular.toJson({ employee: data });
         }
+      },
+      update: {
+        method: 'PUT',
+        transformRequest: function(originalData) {
+          var data = angular.copy(originalData);
+
+          return angular.toJson({ employee: data });
+        }
       }
     });
   }

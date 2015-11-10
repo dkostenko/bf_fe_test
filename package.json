@@ -6,7 +6,6 @@
   "scripts": {
     "start": "gulp",
     "build": "NODE_ENV=production gulp build",
-    "lint": "jshint app",
     "validate": "npm ls"
   },
   "repository": {

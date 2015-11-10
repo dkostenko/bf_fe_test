@@ -1,0 +1,33 @@
+.container
+  .row
+    .col-xs-6
+      .page-header
+        h4 vacancy # {{ vm.vacancy.id }}
+        
+      dl.dl-horizontal
+        dt ID
+        dd {{ vm.vacancy.id }}
+
+        dt title
+        dd {{ vm.vacancy.title }}
+
+        dt expired_at
+        dd {{ vm.vacancy.expired_at | date:'medium' }}
+        
+        dt salary
+        dd {{ vm.vacancy.salary }}
+
+        dt contacts
+        dd {{ vm.vacancy.contacts }}
+
+        dt created_at
+        dd {{ vm.vacancy.created_at | date:'medium' }}
+
+
+    .col-xs-6
+      .page-header
+        h4 Частично подходящие кандидаты
+        
+      ul
+        li(ng-repeat='employee in vm.employees')
+          a(ng-href='/employees/{{ employee.id }}') {{ employee.name }}

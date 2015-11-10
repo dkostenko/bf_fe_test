@@ -4,21 +4,30 @@
       .page-header
         h4 Employee # {{ vm.employee.id }}
         
-        dl.dl-horizontal
-          dt ID
-          dd {{ vm.employee.id }}
+      dl.dl-horizontal
+        dt ID
+        dd {{ vm.employee.id }}
 
-          dt Name
-          dd {{ vm.employee.name }}
-          
-          dt Email
-          dd {{ vm.employee.email }}
+        dt Name
+        dd {{ vm.employee.name }}
+        
+        dt Email
+        dd {{ vm.employee.email }}
 
-          dt Phone
-          dd {{ vm.employee.phone }}
+        dt Phone
+        dd {{ vm.employee.phone }}
 
-          dt Status
-          dd {{ vm.employee.status }}
+        dt Status
+        dd {{ vm.employee.status }}
 
-          dt Salary
-          dd {{ vm.employee.salary }}
+        dt Salary
+        dd {{ vm.employee.salary }}
+
+
+    .col-xs-6
+      .page-header
+        h4 Частично подходящие вакансии
+
+      ul
+        li(ng-repeat='vacancy in vm.vacancies')
+          a(ng-href='/vacancies/{{ vacancy.id }}') {{ vacancy.title }}

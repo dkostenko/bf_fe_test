@@ -23,12 +23,16 @@
             th contacts
             th created_at 
             th expired_at
+            th
             
         tbody
           tr(ng-repeat='vacancy in vm.vacancies')
             td {{ vacancy.id }}
-            td {{ vacancy.title }}
+            td
+              a(ng-href='/vacancies/{{ vacancy.id }}') {{ vacancy.title }}
             td {{ vacancy.salary }}
             td {{ vacancy.contacts }}
             td {{ vacancy.created_at | date:'medium' }}
             td {{ vacancy.expired_at | date:'medium' }}
+            td.text-right
+              a(ng-href='/vacancies/{{ vacancy.id }}/edit') Редактировать
