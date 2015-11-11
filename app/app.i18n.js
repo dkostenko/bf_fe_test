@@ -49,6 +49,8 @@ module.exports = function(ngModule) {
       'EDITING_EMPLOYE_WITH_ID': 'Редактирование работника с ID {{ id }}',
       'SHOWING_EMPLOYEE_WITH_ID': 'Просмотр работника с ID {{ id }}',
       'APPROPRIATE_VACANCIES': 'Подходящие вакансии',
+      'EMPLOYEE_NAME_HINT': '3 слова и кириллические буквы и пробелы.',
+      'EMPLOYEE_EMAIL_OR_PHONE_HINT': 'Необходимо ввести номер телефона или email.'
     });
     
     $translateProvider.preferredLanguage('ru');

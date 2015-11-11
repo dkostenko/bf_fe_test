@@ -13,6 +13,7 @@
             ng-model='vm.employee.name',
             ng-required='true'
           )
+          span.help-block {{ 'EMPLOYEE_NAME_HINT' | translate }}
 
         .form-group
           label(for='email') {{ 'EMPLOYEE_EMAIL' | translate }}
@@ -21,6 +22,7 @@
             placeholder="{{ 'EMPLOYEE_EMAIL_EXAMPLE' | translate }}",
             ng-model='vm.employee.email'
           )
+          span.help-block {{ 'EMPLOYEE_EMAIL_OR_PHONE_HINT' | translate }}
 
         .form-group
           label(for='phone') {{ 'EMPLOYEE_PHONE' | translate }}
@@ -29,6 +31,7 @@
             placeholder="{{ 'EMPLOYEE_PHONE_EXAMPLE' | translate }}",
             ng-model='vm.employee.phone'
           )
+          span.help-block {{ 'EMPLOYEE_EMAIL_OR_PHONE_HINT' | translate }}
 
         .form-group
           label(for='salary') {{ 'EMPLOYEE_SALARY' | translate }}
