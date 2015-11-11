@@ -5,24 +5,24 @@
         .row
           .col-xs-6
             h4
-              | Employees
+              | {{ 'EMPLOYEES' | translate }}
               | 
               small ({{ vm.employeesCount }})
           
           .col-xs-6.text-right
             small
-              a.btn.btn-link(href='/employees/new') Add
+              a.btn.btn-link(href='/employees/new') {{ 'ADD_EMPLOYEE' | translate }}
 
 
       table.table.table-hover(ng-if='vm.employeesCount > 0')
         thead
           tr
-            th ID
-            th Name
-            th email 
-            th phone
-            th status
-            th salary 
+            th {{ 'ID' | translate }} ID
+            th {{ 'EMPLOYEE_NAME' | translate }}
+            th {{ 'EMPLOYEE_EMAIL' | translate }}
+            th {{ 'EMPLOYEE_PHONE' | translate }}
+            th {{ 'EMPLOYEE_STATUS' | translate }}
+            th {{ 'EMPLOYEE_SALARY' | translate }}
             th
             
         tbody
@@ -32,7 +32,9 @@
               a(ng-href='/employees/{{ employee.id }}') {{ employee.name }}
             td {{ employee.email }}
             td {{ employee.phone }}
-            td {{ employee.status }}
+            td
+              span(ng-if='employee.status') {{ 'EMPLOYEE_IS_LOOKING_FOR_A_JOB' | translate }}
+              span(ng-if='!employee.status') {{ 'EMPLOYEE_IS_NOT_LOOKING_FOR_A_JOB' | translate }}
             td {{ employee.salary }}
             td.text-right
-              a(ng-href='/employees/{{ employee.id }}/edit') Редактировать
+              a(ng-href='/employees/{{ employee.id }}/edit') {{ 'EDIT' | translate }}

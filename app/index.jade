@@ -8,7 +8,7 @@ html(ng-app='app')
     //- endinject
 
   body
-    nav.navbar.navbar-default
+    nav.navbar.navbar-default.ng-cloak
       .container
         .navbar-header
           a.navbar-brand(href='/skills') BF
@@ -16,11 +16,11 @@ html(ng-app='app')
         .collapse.navbar-collapse#bs-example-navbar-collapse-1
           ul.nav.navbar-nav
             li
-              a(href='/skills') Skills
+              a(href='/skills') {{ 'SKILLS' | translate }}
             li
-              a(href='/vacancies') Vacancies
+              a(href='/vacancies') {{ 'VACANCIES' | translate }}
             li
-              a(href='/employees') Employees
+              a(href='/employees') {{ 'EMPLOYEES' | translate }}
     ng-view
     //- inject:js
     //- endinject

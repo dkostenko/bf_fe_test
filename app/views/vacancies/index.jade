@@ -5,24 +5,24 @@
         .row
           .col-xs-6
             h4
-              | Vacancies
+              | {{ 'VACANCIES' | translate }}
               | 
               small ({{ vm.vacanciesCount }})
           
           .col-xs-6.text-right
             small
-              a.btn.btn-link(href='/vacancies/new') Add
+              a.btn.btn-link(href='/vacancies/new') {{ 'ADD_VACANCY' | translate }}
 
 
       table.table.table-hover(ng-if='vm.vacanciesCount > 0')
         thead
           tr
-            th ID
-            th Title
-            th salary
-            th contacts
-            th created_at 
-            th expired_at
+            th {{ 'ID' | translate }}
+            th {{ 'VACANCY_TITLE' | translate }}
+            th {{ 'VACANCY_SALARY' | translate }}
+            th {{ 'VACANCY_CONTACTS' | translate }}
+            th {{ 'VACANCY_CREATED_AT' | translate }} 
+            th {{ 'VACANCY_EXPIRED_AT' | translate }}
             th
             
         tbody
@@ -35,4 +35,4 @@
             td {{ vacancy.created_at | date:'medium' }}
             td {{ vacancy.expired_at | date:'medium' }}
             td.text-right
-              a(ng-href='/vacancies/{{ vacancy.id }}/edit') Редактировать
+              a(ng-href='/vacancies/{{ vacancy.id }}/edit') {{ 'EDIT' | translate }}

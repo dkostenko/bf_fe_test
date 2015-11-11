@@ -2,17 +2,17 @@
   .row
     .col-xs-6.col-xs-offset-3
       .page-header
-        h4 New skill
+        h4 {{ 'NEW_SKILL' | translate }}
 
 
       form(ng-submit='vm.createSkill()')
         .form-group
-          label(for='name') name
+          label(for='name') {{ 'SKILL_NAME' | translate }}
           input#name.form-control(
             type='text', 
-            placeholder='name',
+            placeholder="{{ 'SKILL_EXAMPLE' | translate }}",
             ng-model='vm.skill.name',
             ng-required='true'
           )
 
-        button.btn.btn-default(type='submit') Submit
+        button.btn.btn-default(type='submit') {{ 'SAVE' | translate }}

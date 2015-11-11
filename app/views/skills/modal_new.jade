@@ -1,13 +1,13 @@
 .modal-header
-  h3.modal-title Добавление умения
+  h4.modal-title {{ 'NEW_SKILL' | translate }}
 
 form(ng-submit='vm.createSkillHandler()')
   .modal-body
     .form-group
-      label(for='name') name
+      label(for='name') {{ 'SKILL_NAME' | translate }}
       input#name.form-control(
         type='text', 
-        placeholder='name',
+        placeholder="{{ 'SKILL_EXAMPLE' | translate }}",
         ng-model='vm.skill.name',
         ng-required='true'
       )
@@ -16,5 +16,5 @@ form(ng-submit='vm.createSkillHandler()')
     button.btn.btn-link(
       type='button',
       ng-click='vm.cancelHandler()'
-    ) Cancel
-    button.btn.btn-default(type='submit') Submit
+    ) {{ 'CANCEL' | translate }}
+    button.btn.btn-default(type='submit') {{ 'SAVE' | translate }}

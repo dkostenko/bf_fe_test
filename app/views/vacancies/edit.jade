@@ -1,33 +1,33 @@
 .container
   .row
-    .col-xs-6
+    .col-md-6
       .page-header
-        h4 Edit vacancy # {{ vm.vacancy.id }}
+        h4 {{ 'EDITING_VACANCY_WITH_ID' | translate:{ id:vm.vacancy.id } }}
         
       form(ng-submit='vm.updateVacancyHandler()')
         .form-group
-          label(for='title') Title
+          label(for='title') {{ 'VACANCY_TITLE' | translate }}
           input#title.form-control(
             type='text', 
-            placeholder='title',
+            placeholder="{{ 'VACANCY_TITLE_EXAMPLE' | translate }}",
             ng-model='vm.vacancy.title',
             ng-required='true'
           )
 
         .form-group
-          label(for='contacts') contacts
+          label(for='contacts') {{ 'VACANCY_CONTACTS' | translate }}
           input#contacts.form-control(
             type='text', 
-            placeholder='contacts',
+            placeholder="{{ 'VACANCY_CONTACTS_EXAMPLE' | translate }}",
             ng-model='vm.vacancy.contacts',
             ng-required='true'
           )
 
         .form-group
-          label(for='salary') salary
+          label(for='salary') {{ 'VACANCY_SALARY' | translate }}
           input#salary.form-control(
             type='number', 
-            placeholder='salary', 
+            placeholder="{{ 'VACANCY_SALARY_EXAMPLE' | translate }}", 
             min='0', 
             max='2147483647',
             ng-model='vm.vacancy.salary',
@@ -35,25 +35,22 @@
           )
 
         .form-group
-          label(for='expired_at') expired_at
+          label(for='expired_at') {{ 'VACANCY_EXPIRED_AT' | translate }}
           input#expired_at.form-control(
             type='date', 
-            placeholder='expired_at',
+            placeholder="{{ 'VACANCY_EXPIRED_AT_EXAMPLE' | translate }}", 
             ng-model='vm.vacancy.expired_at',
             ng-required='true'
           )
 
-        button.btn.btn-default(type='submit') Submit
+        button.btn.btn-default(type='submit') {{ 'SAVE' | translate }}
 
 
-    .col-xs-6
+    .col-md-6
       .page-header
-        h4 Умения
+        h4 {{ 'SKILLS' | translate }}
 
-      a(
-        href='#',
-        ng-click='vm.createSkillHandler()'
-      ) Добавить умение
+      p.text-warning {{ 'SKILL_ADDING_WARNING' | translate }}
 
       .checkbox(ng-repeat='skill in vm.skills')
         label
@@ -65,3 +62,7 @@
           | 
           | {{ skill.name }}
 
+      a(
+        href='#',
+        ng-click='vm.createSkillHandler()'
+      ) {{ 'ADD_ONE_MORE_SKILL' | translate }}

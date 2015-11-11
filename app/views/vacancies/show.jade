@@ -2,31 +2,31 @@
   .row
     .col-md-3
       .page-header
-        h4 vacancy # {{ vm.vacancy.id }}
+        h4 {{ 'SHOWING_VACANCY_WITH_ID' | translate:{ id:vm.vacancy.id } }}
         
       dl.dl-horizontal
-        dt ID
+        dt {{ 'ID' | translate }}
         dd {{ vm.vacancy.id }}
 
-        dt title
+        dt {{ 'VACANCY_TITLE' | translate }}
         dd {{ vm.vacancy.title }}
 
-        dt expired_at
-        dd {{ vm.vacancy.expired_at | date:'medium' }}
-        
-        dt salary
-        dd {{ vm.vacancy.salary }}
-
-        dt contacts
+        dt {{ 'VACANCY_CONTACTS' | translate }}
         dd {{ vm.vacancy.contacts }}
 
-        dt created_at
+        dt {{ 'VACANCY_SALARY' | translate }}
+        dd {{ vm.vacancy.salary }}
+
+        dt {{ 'VACANCY_EXPIRED_AT' | translate }}
+        dd {{ vm.vacancy.expired_at | date:'medium' }}
+
+        dt {{ 'VACANCY_CREATED_AT' | translate }}
         dd {{ vm.vacancy.created_at | date:'medium' }}
 
 
     .col-md-3
       .page-header
-        h4 Умения
+        h4 {{ 'SKILLS' | translate }}
       
       ul
         li(ng-repeat='skill in vm.skills') {{ skill.name }}
@@ -34,17 +34,17 @@
 
     .col-md-6
       .page-header
-        h4 Подходящие кандидаты
+        h4 {{ 'APPROPRIATE_EMPLOYEES' | translate }}
       
       .row
         .col-md-6
-          h6 Частичное совпадение умений
+          h6 {{ 'PARTIAL_SKILLS_MATCH' | translate }}
           ul
             li(ng-repeat='employee in vm.employees')
               a(ng-href='/employees/{{ employee.id }}') {{ employee.name }}
 
         .col-md-6
-          h6 Полное совпадение умений
+          h6 {{ 'FULL_SKILLS_MATCH' | translate }}
           ul
             li(ng-repeat='employee in vm.fullMatchEmployees')
               a(ng-href='/employees/{{ employee.id }}') {{ employee.name }}

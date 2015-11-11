@@ -3,6 +3,7 @@
 var ngModule = require('./app.module');
 
 require('./app.config.js')(ngModule);
+require('./app.i18n.js')(ngModule);
 
 require('./js/skills/index.controller.js')(ngModule);
 require('./js/skills/new.controller.js')(ngModule);

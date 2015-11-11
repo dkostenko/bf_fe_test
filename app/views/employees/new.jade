@@ -2,40 +2,40 @@
   .row
     .col-xs-6.col-xs-offset-3
       .page-header
-        h4 New employee
+        h4 {{ 'ADDING_EMPLOYEE' | translate }}
 
 
       form(ng-submit='vm.createEmployee()')
         .form-group
-          label(for='name') Name
+          label(for='name') {{ 'EMPLOYEE_NAME' | translate }}
           input#name.form-control(
             type='text', 
-            placeholder='name',
+            placeholder="{{ 'EMPLOYEE_NAME_EXAMPLE' | translate }}",
             ng-model='vm.employee.name',
             ng-required='true'
           )
 
         .form-group
-          label(for='email') email
+          label(for='email') {{ 'EMPLOYEE_EMAIL' | translate }}
           input#email.form-control(
             type='email', 
-            placeholder='email',
+            placeholder="{{ 'EMPLOYEE_EMAIL_EXAMPLE' | translate }}",
             ng-model='vm.employee.email'
           )
 
         .form-group
-          label(for='phone') phone
+          label(for='phone') {{ 'EMPLOYEE_PHONE' | translate }}
           input#phone.form-control(
             type='text', 
-            placeholder='phone', 
+            placeholder="{{ 'EMPLOYEE_PHONE_EXAMPLE' | translate }}",
             ng-model='vm.employee.phone'
           )
 
         .form-group
-          label(for='salary') salary
+          label(for='salary') {{ 'EMPLOYEE_SALARY' | translate }}
           input#salary.form-control(
             type='number', 
-            placeholder='salary', 
+            placeholder="{{ 'EMPLOYEE_SALARY_EXAMPLE' | translate }}",
             min='0', 
             max='2147483647',
             ng-model='vm.employee.salary',
@@ -49,6 +49,7 @@
               ng-model='vm.employee.status'
             )
             | 
-            | Ищу работу
+            | {{ 'EMPLOYEE_IS_LOOKING_FOR_A_JOB' | translate }}
 
-        button.btn.btn-default(type='submit') Submit
+        button.btn.btn-default(type='submit') {{ 'SAVE' | translate }}
+

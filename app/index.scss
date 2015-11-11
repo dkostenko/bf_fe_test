@@ -1,3 +1,7 @@
 // $icon-font-path: '/fonts/bootstrap/';
 // @import "vendors/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

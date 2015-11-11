@@ -4,5 +4,6 @@ module.exports = angular.module('app', [
   'ngRoute',
   'ngSanitize',
   'ngResource',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'pascalprecht.translate'
 ]);
