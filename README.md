@@ -1,7 +1,35 @@
-# bf_fe_test
+# Test task for company
 
-In order to run AngularJS app you need:
-- run rails server
-- $ npm install
-- $ gulp --proxyUrl http://localhost:3000 (if your server is running on the port 3000)
-- open in browser localhost:3001
+## Some important steps to run this app in development environment
+
+* Clone this repository.
+
+* Enter the project folder.
+
+* Run this command to uodate node js:
+
+```
+brew upgrade node
+```
+
+or download the last stable version from the official website (https://nodejs.org/en/).
+Project was tested with node js v0.12.7.
+
+
+* Install all dependencies with this command:
+
+```
+npm install
+```
+
+* Run project with command (where parametr proxyUrl is your server address):
+
+```
+gulp --proxyUrl http://localhost:3000
+```
+
+* Open browser with address:
+
+```
+http://localhost:3001
+```
