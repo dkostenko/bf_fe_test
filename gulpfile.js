@@ -12,7 +12,6 @@ var SUBDOMAIN = process.env.SUBDOMAIN || 'develop-v2';
 
 require(path.resolve(GULP_PATH, 'build'))(ENV);
 require(path.resolve(GULP_PATH, 'del'));
-require(path.resolve(GULP_PATH, 'lint'))
 require(path.resolve(GULP_PATH, 'serve'))(HOST, PROXY_URL);
 
 gulp.task('default', function(cb) {

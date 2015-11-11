@@ -6,7 +6,6 @@
   "scripts": {
     "start": "gulp",
     "build": "NODE_ENV=production gulp build",
-    "lint": "jshint app",
     "validate": "npm ls"
   },
   "repository": {
@@ -16,9 +15,10 @@
   "author": "Dmitry Kostenko",
   "dependencies": {
     "angular": "^1.4.7",
+    "angular-resource": "^1.4.7",
     "angular-route": "^1.4.7",
     "angular-sanitize": "^1.4.7",
-    "angular-resource": "^1.4.7",
+    "angular-ui-bootstrap": "^0.14.3",
     "bootstrap-sass": "^3.3.5"
   },
   "devDependencies": {

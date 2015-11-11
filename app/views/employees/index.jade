@@ -23,6 +23,7 @@
             th phone
             th status
             th salary 
+            th
             
         tbody
           tr(ng-repeat='employee in vm.employees')
@@ -33,3 +34,5 @@
             td {{ employee.phone }}
             td {{ employee.status }}
             td {{ employee.salary }}
+            td.text-right
+              a(ng-href='/employees/{{ employee.id }}/edit') Редактировать

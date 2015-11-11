@@ -1,24 +1,51 @@
 .container
   .row
-    .col-xs-6
+    .col-md-3
       .page-header
         h4 Employee # {{ vm.employee.id }}
         
-        dl.dl-horizontal
-          dt ID
-          dd {{ vm.employee.id }}
+      dl.dl-horizontal
+        dt ID
+        dd {{ vm.employee.id }}
 
-          dt Name
-          dd {{ vm.employee.name }}
-          
-          dt Email
-          dd {{ vm.employee.email }}
+        dt Name
+        dd {{ vm.employee.name }}
+        
+        dt Email
+        dd {{ vm.employee.email }}
 
-          dt Phone
-          dd {{ vm.employee.phone }}
+        dt Phone
+        dd {{ vm.employee.phone }}
 
-          dt Status
-          dd {{ vm.employee.status }}
+        dt Status
+        dd {{ vm.employee.status }}
 
-          dt Salary
-          dd {{ vm.employee.salary }}
+        dt Salary
+        dd {{ vm.employee.salary }}
+
+
+    .col-md-3
+      .page-header
+        h4 Умения
+      
+      ul
+        li(ng-repeat='skill in vm.skills') {{ skill.name }}
+
+
+    .col-md-6
+      .page-header
+        h4 Подходящие вакансии
+
+      .row
+        .col-md-6
+          h6 Частичное совпадение умений
+          ul
+            li(ng-repeat='vacancy in vm.vacancies')
+              a(ng-href='/vacancies/{{ vacancy.id }}') {{ vacancy.title }}
+
+
+        .col-md-6
+          h6 Частичное совпадение умений
+          ul
+            li(ng-repeat='vacancy in vm.fullMatchVacancies')
+              a(ng-href='/vacancies/{{ vacancy.id }}') {{ vacancy.title }}
