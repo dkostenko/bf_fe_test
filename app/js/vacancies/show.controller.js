@@ -13,6 +13,11 @@ module.exports = function(ngModule) {
           vm.employeesCount = resp.total_count;
         });
         
+        VacancyEmployeeResource.query({ vacancyId: vm.vacancy.id, full_match: true }, function(resp) {
+          vm.fullMatchEmployees = resp.employees;
+          vm.fullMatchEmployeesCount = resp.total_count;
+        });
+        
         VacancySkillResource.query({ vacancyId: vm.vacancy.id }, function(resp) {
           vm.skills = resp.skills;
           vm.skillsCount = resp.total_count;

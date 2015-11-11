@@ -1,6 +1,6 @@
 .container
   .row
-    .col-md-4
+    .col-md-3
       .page-header
         h4 vacancy # {{ vm.vacancy.id }}
         
@@ -24,7 +24,7 @@
         dd {{ vm.vacancy.created_at | date:'medium' }}
 
 
-    .col-md-4
+    .col-md-3
       .page-header
         h4 Умения
       
@@ -32,10 +32,19 @@
         li(ng-repeat='skill in vm.skills') {{ skill.name }}
 
 
-    .col-md-4
+    .col-md-6
       .page-header
-        h4 Частично подходящие кандидаты
-        
-      ul
-        li(ng-repeat='employee in vm.employees')
-          a(ng-href='/employees/{{ employee.id }}') {{ employee.name }}
+        h4 Подходящие кандидаты
+      
+      .row
+        .col-md-6
+          h6 Частичное совпадение умений
+          ul
+            li(ng-repeat='employee in vm.employees')
+              a(ng-href='/employees/{{ employee.id }}') {{ employee.name }}
+
+        .col-md-6
+          h6 Полное совпадение умений
+          ul
+            li(ng-repeat='employee in vm.fullMatchEmployees')
+              a(ng-href='/employees/{{ employee.id }}') {{ employee.name }}
