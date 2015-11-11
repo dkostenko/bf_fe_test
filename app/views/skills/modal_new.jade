@@ -1,0 +1,20 @@
+.modal-header
+  h3.modal-title Добавление умения
+
+form(ng-submit='vm.createSkillHandler()')
+  .modal-body
+    .form-group
+      label(for='name') name
+      input#name.form-control(
+        type='text', 
+        placeholder='name',
+        ng-model='vm.skill.name',
+        ng-required='true'
+      )
+
+  .modal-footer
+    button.btn.btn-link(
+      type='button',
+      ng-click='vm.cancelHandler()'
+    ) Cancel
+    button.btn.btn-default(type='submit') Submit

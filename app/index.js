@@ -6,6 +6,7 @@ require('./app.config.js')(ngModule);
 
 require('./js/skills/index.controller.js')(ngModule);
 require('./js/skills/new.controller.js')(ngModule);
+require('./js/skills/modal.new.controller.js')(ngModule);
 require('./js/skills/resource.js')(ngModule);
 
 require('./js/vacancies/index.controller.js')(ngModule);

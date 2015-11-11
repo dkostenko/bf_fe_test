@@ -50,6 +50,11 @@
       .page-header
         h4 Умения
 
+      a(
+        href='#',
+        ng-click='vm.createSkillHandler()'
+      ) Добавить умение
+
       .checkbox(ng-repeat='skill in vm.skills')
         label
           input(

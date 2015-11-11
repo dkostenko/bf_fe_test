@@ -1,12 +1,13 @@
 module.exports = function(ngModule) {
   'use strict';
 
-  function ctrl($http, $routeParams, $location, EmployeeResource, SkillResource, EmployeeSkillResource) {
+  function ctrl($http, $routeParams, $location, EmployeeResource, SkillResource, EmployeeSkillResource, $uibModal) {
     /*jshint validthis:true */
     var vm = this;
     
     vm.updateEmployeeHandler = updateEmployeeHandler;
     vm.skillSeletionChangeHandler = skillSeletionChangeHandler;
+    vm.createSkillHandler = createSkillHandler;
 
     vm.employee = EmployeeResource.get(
       { id: $routeParams.employeeId },
@@ -57,6 +58,22 @@ module.exports = function(ngModule) {
       } else {
         EmployeeSkillResource.remove({ employeeId: vm.employee.id, skillId: skill.id });
       }
+    }
+    
+    function createSkillHandler() {
+      var modalInstance = $uibModal.open({
+        animation: true,
+        templateUrl: '/views/skills/modal_new.html',
+        controller: 'SkillsModalNewCtrl',
+        controllerAs: 'vm'
+      });
+      
+      modalInstance.result.then(function(skill) {
+        vm.skills.push(skill);
+        
+        skill.selected = true;
+        skillSeletionChangeHandler(skill);
+      });
     }
   }
 
